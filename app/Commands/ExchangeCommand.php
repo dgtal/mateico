@@ -32,10 +32,22 @@ class ExchangeCommand extends Command
     {
         $update = $this->getUpdate();
 
-        $text = "Dólar: 28,17 | 28,88\n";
-        $text.= "Euro: 29.20 | 31.29\n";
-        $text.= "Peso AR: 1.58 | 2.08\n";
-        $text.= "Real: 8.64 | 9.44\n";
+        $whitelist = ['dolar', 'euro', 'peso-argentino', 'real'];
+
+        $exchange_rates = json_decode(file_get_contents(storage_path('exchange_rates.json')), true);
+
+        $exchange_rates = array_intersect_key($exchange_rates, array_flip($whitelist));
+
+        $text = '';
+
+        foreach ($exchange_rates as $exchange_rate) {
+            $text .= implode(' - ', $exchange_rate) . "\n";
+        }
+
+        // $text = "Dólar: 28,17 | 28,88\n";
+        // $text.= "Euro: 29.20 | 31.29\n";
+        // $text.= "Peso AR: 1.58 | 2.08\n";
+        // $text.= "Real: 8.64 | 9.44\n";
 
         $this->replyWithMessage(['text' => $text]);
     }
