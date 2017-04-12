@@ -1,3 +1,4 @@
+composer.lock
 storage/exchange_rates.json
 .DS_Store
 /node_modules
