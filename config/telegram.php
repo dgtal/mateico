@@ -43,7 +43,8 @@ return [
             'username' => env('TELEGRAM_BOT_USERNAME', 'username_bot'),
             'token' => env('TELEGRAM_BOT_TOKEN', 'TELEGRAM_BOT_TOKEN'),
             'commands' => [
-                App\Commands\StartCommand::class
+                App\Commands\StartCommand::class,
+                App\Commands\ExchangeCommand::class,
             ],
         ],
 
