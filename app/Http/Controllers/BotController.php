@@ -42,7 +42,7 @@ class BotController extends Controller
     {
         // Edit this with your webhook URL.
         // You can also use: route('bot-webhook')
-        $url = "https://robot.app/bot/webhook";
+        $url = "http://mateico.dgtal.info/bot/webhook";
         $response = $this->telegram->setWebhook()
             ->url($url)
             ->getResult();
