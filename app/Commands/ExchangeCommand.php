@@ -18,12 +18,12 @@ class ExchangeCommand extends Command
     /**
      * @var array Command Aliases
      */
-    protected $aliases = ['dollar'];
+    protected $aliases = ['cotizacion'];
 
     /**
      * @var string Command Description
      */
-    protected $description = 'Exchange Command to fetch the current exchange rate';
+    protected $description = 'Comando para obtener las cotizaciones del BROU';
 
     /**
      * {@inheritdoc}

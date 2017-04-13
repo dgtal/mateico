@@ -23,7 +23,7 @@ class StartCommand extends Command
     /**
      * @var string Command Description
      */
-    protected $description = 'Start Command to get you started';
+    protected $description = 'Comando start para comenzar';
 
     /**
      * {@inheritdoc}
@@ -33,7 +33,7 @@ class StartCommand extends Command
         $update = $this->getUpdate();
 
         $name = $update->getMessage()->from->firstName;
-        $text = "Hello, $name! Welcome to our bot!\nType /help to get a list of available commands.";
+        $text = "Hola, $name!\n Escribe /help para obtener la lista de comandos.";
 
         $this->replyWithMessage(['text' => $text]);
     }
