@@ -24,8 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command(Commands\GetExchangeRates::class)
+                 ->weekdays()
+                 ->hourly()
+                 ->timezone('America/Montevideo')
+                 ->between('9:00', '17:00');
     }
 
     /**

@@ -70,13 +70,5 @@ class GetExchangeRates extends Command
         }
 
         file_put_contents(storage_path('exchange_rates.json'), json_encode($exchange_rates));
-
-        $exchange_rates = json_decode(file_get_contents(storage_path('exchange_rates.json')), true);
-
-        $whitelist = ['dolar', 'euro', 'peso-argentino', 'real'];
-
-        $xx = array_intersect_key($exchange_rates, array_flip($whitelist));
-
-        dd($xx);
     }
 }

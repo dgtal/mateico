@@ -44,11 +44,6 @@ class ExchangeCommand extends Command
             $text .= implode(' - ', $exchange_rate) . "\n";
         }
 
-        // $text = "Dólar: 28,17 | 28,88\n";
-        // $text.= "Euro: 29.20 | 31.29\n";
-        // $text.= "Peso AR: 1.58 | 2.08\n";
-        // $text.= "Real: 8.64 | 9.44\n";
-
         $this->replyWithMessage(['text' => $text]);
     }
 }
